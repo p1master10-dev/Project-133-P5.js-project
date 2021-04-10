@@ -2,14 +2,18 @@ function preload(){
 }
 
 function setup(){
-     createCanvas(700,700);
+     canvas = createCanvas(700,700);
 
      video = createCapture(VIDEO);
+     video.hide();
      tint_colour = "";
 }
 
 function draw(){
-     background(140,140);
+     background(300,300);
+
+     image(video , 230,230,240,230);
+     tint(tint_colour);
 
      /*1*/
      circle(100,100,100,100);
@@ -111,8 +115,9 @@ function draw(){
      fill(68, 162, 235);
      /*4*/
 
-     image(video , 350,350,300,300);
-     tint(tint_colour);
-
      console.clear();
+}
+
+function take_snapshot() {
+     save('meInFramephoto.jpeg');
 }
